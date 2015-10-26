@@ -1,27 +1,19 @@
-/*******************************************************
+/****************************************
 ______________                ______________
 ______________ \  /\  /|\  /| ______________
 ______________  \/  \/ | \/ | ______________
-
---Module Name:
---Project Name:
---Chinese Description:
-	
---English Description:
-	
---Version:VERA.1.0.0
---Data modified:
+--Module Name:  image_file_package_tb.sv
+--Project Name: GitHub
+--Data modified: 2015-10-26 12:28:12 +0800
 --author:Young-ÎâÃ÷
 --E-mail: wmy367@Gmail.com
---Data created:
-________________________________________________________
-********************************************************/
+****************************************/
 `timescale 1ns/1ps
 module image_file_package_tb;
 
 import ImageFilePkg::*;
 
-ImageFileClass afile	= new("tmp.txt");
+ImageFileClass afile	= new("E:/work/video_process_module/image_file_class/tmp.txt");
 
 int line [$];
 

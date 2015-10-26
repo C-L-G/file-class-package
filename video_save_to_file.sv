@@ -1,22 +1,13 @@
-/*******************************************************
+/****************************************
 ______________                ______________
 ______________ \  /\  /|\  /| ______________
 ______________  \/  \/ | \/ | ______________
-
---Module Name:
---Project Name:
---Chinese Description:
-	
---English Description:
-	
---Version:VERA.1.0.0
---Data modified:
+--Module Name:  video_save_to_file.sv
+--Project Name: GitHub
+--Data modified: 2015-10-26 12:28:12 +0800
 --author:Young-ÎâÃ÷
 --E-mail: wmy367@Gmail.com
---Data created:
-________________________________________________________
-********************************************************/
-
+****************************************/
 module video_save_to_file #(
 	parameter	DSIZE	= 8,
 	parameter	NUM_D	= 3,

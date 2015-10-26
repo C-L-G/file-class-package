@@ -1,22 +1,13 @@
-/*******************************************************
+/****************************************
 ______________                ______________
 ______________ \  /\  /|\  /| ______________
 ______________  \/  \/ | \/ | ______________
-
---Module Name:
---Project Name:
---Chinese Description:
-	
---English Description:
-	
---Version:VERA.1.0.0
---Data modified:
+--Module Name:  image_file_package.sv
+--Project Name: GitHub
+--Data modified: 2015-10-26 12:28:12 +0800
 --author:Young-ÎâÃ÷
 --E-mail: wmy367@Gmail.com
---Data created:
-________________________________________________________
-********************************************************/
-
+****************************************/
 package ImageFilePkg;
 
 class ImageFileClass;
@@ -55,7 +46,7 @@ class ImageFileClass;
 	//-->> open temp file <<--
 	tmp_handle= $fopen(tmp_path,"w");
 	if(tmp_handle == -1)begin
-		 $display("--->>>read line: Can't read file %s <<---",tmp_path);
+		$display("--->>>read line: Can't read file %s <<---",tmp_path);
 	end
 	//--<< open temp file >>--
 	//-->> REWIND FILE <<--
@@ -71,12 +62,16 @@ class ImageFileClass;
 	    $fwrite(tmp_handle,"%s",curr_string);
 	    $fclose(tmp_handle);
 	    //---<< >>---
+		//$display("%s",curr_string);
 	    tmp_handle= $fopen(tmp_path,"r");
 	    while( ($fscanf(tmp_handle,"%d ",line[II])) != -1)begin
-		p1[II]	= line[II]>>(2*pesize);
-		p2[II]	= (line[II]>>pesize)%(2**pesize);
-		p3[II]	= line[II] % (2**pesize);
-		II += 1;
+		//while( ($sscanf(curr_string,"%d ",line[II])) != -1)begin
+			$display("NUM: %d -->> %d",II,line[II]);
+			$stop;
+			p1[II]	= line[II]>>(2*pesize);
+			p2[II]	= (line[II]>>pesize)%(2**pesize);
+			p3[II]	= line[II] % (2**pesize);
+			II += 1;
 	    end
 	    $fclose(tmp_handle);
 	    this.line_data  = line;
